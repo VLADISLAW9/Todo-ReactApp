@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import CreateTodoField from './Item/CreateTodoField'
 import TodoItem from './Item/TodoItem'
 
 const data = [
@@ -31,14 +32,14 @@ const Home = () => {
 		setTodos(copy)
 	}
 
-	const removeTodo = id => {
-		setTodos([...todos].filter(t => t._id != id))
-	}
+	const removeTodo = id => setTodos([...todos].filter(t => t._id !== id))
+
+	
 
 	return (
 		<div className=' text-white w-4/5 mx-auto'>
 			<h1 className='text-2xl font-bold text-center mb-8'>MY TODOS</h1>
-			{data.map(todo => (
+			{todos.map(todo => (
 				<TodoItem
 					key={todo._id}
 					todo={todo}
@@ -46,6 +47,7 @@ const Home = () => {
 					removeTodo={removeTodo}
 				/>
 			))}
+			<CreateTodoField setTodos={setTodos}/>
 		</div>
 	)
 }
