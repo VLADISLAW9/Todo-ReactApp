@@ -5,19 +5,19 @@ import TodoItem from './Item/TodoItem'
 const data = [
 	{
 		_id: '1',
-		title: 'First task',
-		isComplete: false,
+		title: 'Сделать домашнее задание',
+		isComplete: true,
 	},
 
 	{
 		_id: '2',
-		title: 'Second task',
+		title: 'Погулять с собакой',
 		isComplete: false,
 	},
 
 	{
 		_id: '3',
-		title: 'Fed task',
+		title: 'Помыть посуду',
 		isComplete: false,
 	},
 ]
@@ -37,8 +37,8 @@ const Home = () => {
 	
 
 	return (
-		<div className=' text-white w-4/5 mx-auto'>
-			<h1 className='text-2xl font-bold text-center mb-8'>MY TODOS</h1>
+		<div className=' text-white w-3/5 mx-auto'>
+			<CreateTodoField setTodos={setTodos}/>
 			{todos.map(todo => (
 				<TodoItem
 					key={todo._id}
@@ -47,7 +47,6 @@ const Home = () => {
 					removeTodo={removeTodo}
 				/>
 			))}
-			<CreateTodoField setTodos={setTodos}/>
 		</div>
 	)
 }

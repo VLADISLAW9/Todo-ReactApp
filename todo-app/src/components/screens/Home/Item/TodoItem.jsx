@@ -14,7 +14,7 @@ const TodoItem = ({ todo, changeTodo, removeTodo }) => {
 			</button>
 
 			<button onClick={() => removeTodo(todo._id)}>
-				<BsTrash size={22} className='text-gray-600 hover:text-red-700 transition-colors ease-in-out duration-200 ' />
+				<BsTrash size={22} className='text-gray-400 hover:text-red-700 transition-colors ease-in-out duration-200 ' />
 			</button>
 
 		</div>
